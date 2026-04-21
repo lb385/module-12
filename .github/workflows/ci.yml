@@ -31,6 +31,7 @@ jobs:
     env:
       DATABASE_URL: postgresql+psycopg2://postgres:postgres@localhost:5432/module12
       SECRET_KEY: github-actions-secret
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
 
     steps:
       - name: Check out repository
@@ -47,7 +48,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run tests
-        run: pytest
+        run: pytest tests -q
 
   docker:
     needs: test
