@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 
 from app.db import create_db_and_tables
@@ -11,6 +13,8 @@ app.include_router(calculations.router)
 
 @app.on_event("startup")
 def on_startup() -> None:
+    if os.getenv("TESTING") == "1":
+        return
     create_db_and_tables()
 
 

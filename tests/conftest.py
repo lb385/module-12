@@ -7,6 +7,9 @@ from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+# Ensure tests don't depend on external Postgres from environment.
+os.environ["TESTING"] = "1"
+
 from app.db import Base
 from app.dependencies import get_db
 from app.main import app
