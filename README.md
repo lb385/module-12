@@ -56,9 +56,10 @@ The tests cover:
 
 ## Docker Hub
 
-Replace the placeholder below with your Docker Hub repository:
+- GitHub repository: https://github.com/lb385/module-12.git
+- Docker Hub repository: https://hub.docker.com/r/lb385/module-12-backend
 
-- Docker Hub repository: `YOUR_DOCKER_HUB_REPOSITORY`
+If that page is still 404, create the Docker Hub repository first, then push the image using the same name.
 
 ## CI/CD
 
